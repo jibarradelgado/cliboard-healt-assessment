@@ -20,5 +20,11 @@ describe("deterministicPartitionKey", () => {
     const hash = "5008048b64c14975181175f157be4a780c3d443d2177edf323d57884bc7e3979b9b53bca1325e880df3da0d97c435693441cb5527fbe950f5585678dfbb37785";
     const stringKey = deterministicPartitionKey(myObject);
     expect(stringKey).toBe(hash)
-  })
+  });
+  it("Returns the candidate's number converted to a string when given an object with partitionKey", () => {
+    const number = 25631;
+    const myObject = { partitionKey: number};
+    const stringKey = deterministicPartitionKey(myObject);
+    expect(stringKey).toBe("25631")
+  });
 });
