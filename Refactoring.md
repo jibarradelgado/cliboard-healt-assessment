@@ -9,3 +9,6 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+I just arranged the logic of the steps to follow according of the needs of the function.
+If there is no input, we return "0", there's nothing else to do. 
+If we have an object with the key partitionKey, we get the value of partitionKey, we check if it's a string and if its length is less than 256 and return it. Else, whatever we have as a string, we create a hash from it and return it. Same as the previous statement if the length of the string is more than 256. 
